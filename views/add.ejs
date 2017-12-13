@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="mainContainer">
+      <header>
+        <div class="headerBox">
+          <h1>Welcome to <%= title %></h1>
+        </div>
+      </header>
+
+      <div id="main">
+        <form>
+          <div class="form-group">
+            <label for="name">Student's name</label>
+            <input type="text" class="form-control" id="name-input" placeholder="Enter the student's name here">
+          </div>
+          <div class="form-group">
+            <label for="name">Student's age</label>
+            <input type="number" class="form-control" id="name-input" placeholder="Enter the student's age here">
+            <small id="emailHelp" class="form-text text-muted">Please enter number only</small>
+          </div>
+        </form>
+      </div>
+
+      <footer>
+        <div class="footerBox">
+          <span>Copyright here</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
