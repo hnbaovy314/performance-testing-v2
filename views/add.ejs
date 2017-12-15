@@ -4,6 +4,7 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/add.css"
   </head>
   <body>
     <div id="mainContainer">
@@ -15,14 +16,48 @@
 
       <div id="main">
         <form>
-          <div class="form-group">
-            <label for="name">Student's name</label>
-            <input type="text" class="form-control" id="name-input" placeholder="Enter the student's name here">
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="studentID">Student's ID</label>
+              <input type="number" class="form-control" id="id-input" placeholder="Enter the student's ID here" required>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="name">Student's name</label>
+              <input type="text" class="form-control" id="name-input" placeholder="Enter the student's name here" required>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="name">Student's age</label>
-            <input type="number" class="form-control" id="name-input" placeholder="Enter the student's age here">
-            <small id="emailHelp" class="form-text text-muted">Please enter number only</small>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="gender">Gender</label>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="genderCheck" value="g-male">
+                  Male
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="genderCheck" value="g-female">
+                  Female
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="name">Student's birthday</label>
+              <input type="date" class="form-control" id="date-input" placeholder="Enter the student's birthday here" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="email">Student's email</label>
+              <input type="text" class="form-control" id="email-input" placeholder="Enter the student's email here">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="phone">Student's phone number</label>
+              <input type="text" class="form-control" id="phone-input" placeholder="Enter the student's phone number here" required>
+            </div>
           </div>
         </form>
       </div>
