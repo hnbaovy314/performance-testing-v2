@@ -5,7 +5,21 @@ var MongoClient = require('mongodb').MongoClient;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Main page' });
+  MongoClient.connect(mongoURI, (err, db) => {
+    if (err) {
+      throw err;
+    };
+
+    db.collection('students').find({}).toArray(function(err, result) {
+      if (err) {
+        throw err;
+      };
+      
+      db.close();
+
+      res.render('index', { students: result });
+    });
+  });
 });
 
 module.exports = router;
