@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var add = require('./routes/add');
 var remove = require('./routes/remove');
+var search = require('./routes/search');
 
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/add', add);
 app.use('/remove', remove);
+app.use('/search', search);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
