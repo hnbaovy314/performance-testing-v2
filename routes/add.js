@@ -3,31 +3,31 @@ var router = express.Router();
 var mongoURI = 'mongodb://admin:123456@ds129146.mlab.com:29146/performance-testing'
 var MongoClient = require('mongodb').MongoClient;
 
-var sInfo = {
-  id: '1415',
-  name: 'John',
-  gender: 'male',
-  birthday: '01-01-1990',
-  email: '',
-  phone: ''
-};
+nameArray = ["John", "Jane", "George", "Mary"];
+genderArray = ["Male", "Female"];
+birthArray = ["1994", "1995", "1996", "1997"];
+cityArray = ["New York", "California", "San Francisco", "Texas"];
 
-
-/* GET users listing. */
+/* Add one record */
 router.get('/', function(req, res, next) {
-  res.render('add', { title: 'Add page' });
-  console.log('A get request has been made to Add page');
-});
 
-router.post('/submit', function(req, res, next) {
-  console.log("A post request has been sent!");
+  // Randomize info
+  student = {
+    name: nameArray[Math.floor(Math.random() * nameArray.length)],
+    gender: genderArray[Math.floor(Math.random() * genderArray.length)],
+    birthyear: birthArray[Math.floor(Math.random() * birthArray.length)],
+    city: cityArray[Math.floor(Math.random() * cityArray.length)]
+  };
+
   MongoClient.connect(mongoURI, (err, db) => {
     if (err) {
-      console.log(err);
-    } else {
-      db.collection('students').insert({name: "Violet", gender: "female", birthyear: "2000"});
-      db.close();
-    }
+      throw err;
+    };
+
+    db.collection('students').insert(student);
+    db.close();
+
+    res.redirect('/');
   });
 });
 
