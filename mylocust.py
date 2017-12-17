@@ -12,17 +12,18 @@ class UserBehavior(TaskSet):
     min_wait = 1000
     max_wait = 5000
 
+    @task
     # def add_to_list(self):
     #     self.client.get('/add')
 
     # def remove_from_list(self):
     #     self.client.get('/remove')
-    #
+
     # def auth_lumin(self):
     #     self.client.post('/sign-in',
     #         {"username": "test123@gmail.com",
     #          "password": "123456"})
-    @task
+
     def search_something(self):
         rand = randint(0, len(nameArray)+1)
         if rand >= len(nameArray):
@@ -55,7 +56,7 @@ class UserBehavior(TaskSet):
             'sCity': sCity
         }
         searchTerm = json.dumps(search)
-        self.client.get('/search')
+        self.client.get('/search', params=searchTerm)
 
 
 
