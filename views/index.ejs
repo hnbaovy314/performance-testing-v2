@@ -16,20 +16,41 @@
 
       <div id="main">
         <div class="homeOptions">
-          <div class="optionBox">
+          <form class="form-inline" action='/search'>
+            <div class="form-group">
+              <input type="text" class="form-control" id="studentName" placeholder="Name" name="sName">
+            </div>
+            <div class="form-group">
+              <select class="form-control" id="studentGender" name="sGender">
+                <option></option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="studentBirthyear" placeholder="Birthyear" name="sBirthyear">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="studentCity" placeholder="City" name="sCity">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>            
+          </form>
+          <span class="optionBox">
             <a href="/add" class="btn btn-default">Add</a>
-          </div>
-          <div class="optionBox">
+          </span>
+          <span class="optionBox">
             <a href="/remove" class="btn btn-default">Remove</a>
-          </div>
+          </span>
         </div>
         <div class="listDisplay">
-          <table>
+          <table class="table">
             <thead>
-              <td>Name</td>
-              <td>Gender</td>
-              <td>Birthyear</td>
-              <td>City</td>
+              <tr>
+                <td>Name</td>
+                <td>Gender</td>
+                <td>Birthyear</td>
+                <td>City</td>
+              </tr>
             </thead>
             <tbody>
               <% students.forEach(function(student) { %>
@@ -47,7 +68,7 @@
 
       <footer>
         <div class="footerBox">
-          <span>Copyright here</span>
+          <span>Copyright &copy; Team 04</span>
         </div>
       </footer>
     </div>
