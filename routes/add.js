@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
     birthyear: birthArray[Math.floor(Math.random() * birthArray.length)],
     city: cityArray[Math.floor(Math.random() * cityArray.length)]
   };
-  console.log("NAME: " + nameArray[nameArray.length + 1]);
+  
 
   MongoClient.connect(mongoURI, (err, db) => {
     if (err) {
